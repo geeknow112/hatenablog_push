@@ -1,11 +1,16 @@
 from datetime import datetime
 import requests as req
 
+'''
 HATENA_ID = "yourenemy"
 BLOG_DOMAIN = "tradehack.hatenablog.com"
 API_KEY = "crxm68ghqj"
 BASE_URL = f"https://blog.hatena.ne.jp/{HATENA_ID}/{BLOG_DOMAIN}/atom"
-
+'''
+HATENA_ID = "yourenemy"
+BLOG_DOMAIN = "cashhack.hatenablog.com"
+API_KEY = "crxm68ghqj"
+BASE_URL = f"https://blog.hatena.ne.jp/{HATENA_ID}/{BLOG_DOMAIN}/atom"
 
 def hatena_entry(title, content, categorys=[], updated="", draft=True):
     """はてなブログへの投稿
