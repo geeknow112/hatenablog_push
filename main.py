@@ -79,7 +79,7 @@ if __name__ == "__main__":
     '''
     _, arg = sys.argv
     with open(arg, "r") as f:
-        title, categorys, *content = f.readlines()
+        title, categorys, custom_url, *content = f.readlines()
     categorys = categorys.split(",")
     content = "\n".join(content)
     '''
