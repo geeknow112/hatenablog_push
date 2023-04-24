@@ -32,14 +32,14 @@ def hatena_entry(title, content, categorys=[], updated="", draft=True):
     draft = "no" # 即公開
     category = lambda x: "\n".join([f"<category term='{e}' />" for e in x])
     categorys = category(categorys) if category else ""
-  
+
     xml = f"""<?xml version="1.0" encoding="utf-8"?><entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app">
         <title>{title}</title><author><name>name</name></author><content type="text/markdown">{content}</content>
         <updated>{updated}</updated>{categorys}<app:control><app:draft>{draft}</app:draft>
         </app:control></entry>""".encode(
         "UTF-8"
     )
-    r = req.post(BASE_URL + "/entry/", auth=(HATENA_ID, API_KEY), data=xml)
+    r = req.post(BASE_URL + "/entry", auth=(HATENA_ID, API_KEY), data=xml)
     return r.text
 
 def set_datetime():
@@ -77,7 +77,7 @@ if __name__ == "__main__":
     '''
     _, arg = sys.argv
     with open(arg, "r") as f:
-        title, categorys, custom_url, *content = f.readlines()
+        title, categorys, *content = f.readlines()
     categorys = categorys.split(",")
     content = "\n".join(content)
     '''
@@ -87,10 +87,8 @@ if __name__ == "__main__":
         title, categorys, *content = f.readlines()
     categorys = categorys.split(",")
     content = "\n".join(content)
-
-    print("content : " + content)
+    print(content)
 
     r = hatena_entry(title, content, categorys)
     print(r)
-
 
