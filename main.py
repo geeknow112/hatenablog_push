@@ -34,7 +34,7 @@ def hatena_entry(title, content, categorys=[], custom_url=False, updated="", dra
     categorys = category(categorys) if category else ""
     
     url = BASE_URL + "/entry/"
-    url = url + custom_url if custom_url else ""
+    url = url + custom_url if custom_url else url
 
     xml = f"""<?xml version="1.0" encoding="utf-8"?><entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app">
         <title>{title}</title><author><name>name</name></author><content type="text/markdown">{content}</content>
