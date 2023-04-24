@@ -28,7 +28,8 @@ def hatena_entry(title, content, categorys=[], updated="", draft=True):
         str: xml
     """
     updated = updated if updated else datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
-    draft = "yes" if draft else "no"
+    # draft = "yes" if draft else "no"
+    draft = "no" # 即公開
     category = lambda x: "\n".join([f"<category term='{e}' />" for e in x])
     categorys = category(categorys) if category else ""
 
