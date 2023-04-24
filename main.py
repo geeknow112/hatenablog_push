@@ -12,7 +12,7 @@ BLOG_DOMAIN = "cashhack.hatenablog.com"
 API_KEY = "crxm68ghqj"
 BASE_URL = f"https://blog.hatena.ne.jp/{HATENA_ID}/{BLOG_DOMAIN}/atom"
 
-def hatena_entry(title, content, categorys=[], custom_url, updated="", draft=True):
+def hatena_entry(title, content, categorys=[], custom_url=False, updated="", draft=True):
     """はてなブログへの投稿
     Attributes:
         HATENA_ID, API_KEY, BASE_URL (str)
@@ -33,7 +33,8 @@ def hatena_entry(title, content, categorys=[], custom_url, updated="", draft=Tru
     category = lambda x: "\n".join([f"<category term='{e}' />" for e in x])
     categorys = category(categorys) if category else ""
     
-    url = BASE_URL + "/entry/" + custom_url 
+    url = BASE_URL + "/entry/"
+    url = url + custom_url if custom_url else ""
 
     xml = f"""<?xml version="1.0" encoding="utf-8"?><entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app">
         <title>{title}</title><author><name>name</name></author><content type="text/markdown">{content}</content>
@@ -89,8 +90,8 @@ if __name__ == "__main__":
         title, categorys, custom_url, *content = f.readlines()
     categorys = categorys.split(",")
     content = "\n".join(content)
-    print(custom_url)%exit()
-    print(content)
+    print("custom_url : " + custom_url)
+    print("content : " + content)
 
     r = hatena_entry(title, content, categorys, custom_url)
     print(r)
