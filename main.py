@@ -35,14 +35,15 @@ def hatena_entry(title, content, categorys=[], custom_url=False, updated="", dra
     
     url = BASE_URL + "/entry/"
     url = url + custom_url if custom_url else url
-
+    print("url : " + url)
+    
     xml = f"""<?xml version="1.0" encoding="utf-8"?><entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app">
         <title>{title}</title><author><name>name</name></author><content type="text/markdown">{content}</content>
         <updated>{updated}</updated>{categorys}<app:control><app:draft>{draft}</app:draft>
         </app:control></entry>""".encode(
         "UTF-8"
     )
-    r = req.post(url, auth=(HATENA_ID, API_KEY), data=xml)
+    r = req.post(BASE_URL + "/entry/", auth=(HATENA_ID, API_KEY), data=xml)
     return r.text
 
 def set_datetime():
