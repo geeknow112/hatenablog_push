@@ -89,6 +89,7 @@ if __name__ == "__main__":
         title, categorys, custom_url, *content = f.readlines()
     categorys = categorys.split(",")
     content = "\n".join(content)
+    print(custom_url)%exit()
     print(content)
 
     r = hatena_entry(title, content, categorys, custom_url)
