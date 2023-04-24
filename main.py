@@ -88,7 +88,6 @@ if __name__ == "__main__":
     categorys = categorys.split(",")
     content = "\n".join(content)
 
-    print("custom_url : " + custom_url)
     print("content : " + content)
 
     r = hatena_entry(title, content, categorys)
