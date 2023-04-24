@@ -90,6 +90,7 @@ if __name__ == "__main__":
         title, categorys, custom_url, *content = f.readlines()
     categorys = categorys.split(",")
     content = "\n".join(content)
+
     print("custom_url : " + custom_url)
     print("content : " + content)
 
