@@ -33,17 +33,12 @@ def hatena_entry(title, content, categorys=[], custom_url=None, updated="", draf
     category = lambda x: "\n".join([f"<category term='{e}' />" for e in x])
     categorys = category(categorys) if category else ""
 
-    custom_url = "custom_test_url"
+    custom_url = "custom_url_change"
     print(custom_url)
     # カスタムURLを設定
     if custom_url:
         custom_url_xml = f"""
-            <app:control xmlns:app="http://www.w3.org/2007/app">
-                <app:service name="blog">
-                    <app:category term="hatena:syntax-uri" />
-                </app:service>
-            </app:control>
-            <link xmlns="http://www.w3.org/2005/Atom" rel="hatena:syntax-uri" href="{custom_url}" />
+            <hatenablog:custom-url xmlns:hatenablog="http://www.hatena.ne.jp/info/xmlns#hatenablog">{custom_url}</hatenablog:custom-url>
         """
     else:
         custom_url_xml = ""
@@ -56,9 +51,11 @@ def hatena_entry(title, content, categorys=[], custom_url=None, updated="", draf
         {categorys}
         <app:control>
             <app:draft>{draft}</app:draft>
-            {custom_url_xml}
         </app:control>
+        {custom_url_xml}
     </entry>""".encode("UTF-8")
+    
+    print(custom_url_xml)
 
     r = req.post(BASE_URL + "/entry", auth=(HATENA_ID, API_KEY), data=xml)
     return r.text
@@ -102,16 +99,16 @@ if __name__ == "__main__":
     categorys = categorys.split(",")
     content = "\n".join(content)
     '''
+    custom_url = "custom_test"
+    print(custom_url)
 
     file = set_datetime()
     with open(file, "r") as f:
         title, categorys, *content = f.readlines()
     categorys = categorys.split(",")
     content = "\n".join(content)
-    print(content)
-    custom_url = "custom_test"
-    print(custom_url)
+    #print(content)
 
     r = hatena_entry(title, content, categorys, custom_url)
-    print(r)
+    #print(r)
 
