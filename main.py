@@ -96,7 +96,7 @@ if __name__ == "__main__":
     categorys = categorys.split(",")
     content = "\n".join(content)
     '''
-    
+
     file = set_datetime()
     with open(file, "r") as f:
         title, categorys, custom_url, *content = f.readlines()
