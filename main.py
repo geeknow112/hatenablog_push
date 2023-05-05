@@ -36,9 +36,7 @@ def hatena_entry(title, content, categorys=[], custom_url=None, updated="", draf
     print(custom_url)
     # カスタムURLを設定
     if custom_url:
-        custom_url_xml = f"""
-            <hatenablog:custom-url xmlns:hatenablog="http://www.hatena.ne.jp/info/xmlns#hatenablog">{custom_url}</hatenablog:custom-url>
-        """
+        custom_url_xml = f"""<hatenablog:custom-url xmlns:hatenablog="http://www.hatena.ne.jp/info/xmlns#hatenablog">{custom_url}</hatenablog:custom-url>"""
     else:
         custom_url_xml = ""
 
@@ -98,13 +96,12 @@ if __name__ == "__main__":
     categorys = categorys.split(",")
     content = "\n".join(content)
     '''
-    custom_url = "custom_test"
-    print(custom_url)
 
     file = set_datetime()
     with open(file, "r") as f:
-        title, categorys, *content = f.readlines()
+        title, categorys, custom_url, *content = f.readlines()
     categorys = categorys.split(",")
+    custom_url = custom_url.strip()
     content = "\n".join(content)
     #print(content)
 
