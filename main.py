@@ -32,14 +32,32 @@ def hatena_entry(title, content, categorys=[], updated="", draft=True):
     draft = "no" # 即公開
     category = lambda x: "\n".join([f"<category term='{e}' />" for e in x])
     categorys = category(categorys) if category else ""
-    entry_new_url = 'entry_new_' 
+    
+    # カスタムURLを設定
+    if custom_url:
+        custom_url_xml = f"""
+            <app:control xmlns:app="http://www.w3.org/2007/app">
+                <app:service name="blog">
+                    <app:category term="hatena:syntax-uri" />
+                </app:service>
+            </app:control>
+            <link xmlns="http://www.w3.org/2005/Atom" rel="hatena:syntax-uri" href="{custom_url}" />
+        """
+    else:
+        custom_url_xml = ""
 
-    xml = f"""<?xml version="1.0" encoding="utf-8"?><entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app">
-        <title>{title}</title><author><name>name</name></author><content type="text/markdown">{content}</content>
-        <updated>{updated}</updated>{categorys}<app:control><app:draft>{draft}</app:draft>
-        </app:control><link rel="alternate" href="{entry_new_url}"/></entry>""".encode(
-        "UTF-8"
-    )
+    xml = f"""<?xml version="1.0" encoding="utf-8"?>
+    <entry xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app">
+        <title>{title}</title><author><name>name</name></author>
+        <content type="text/markdown">{content}</content>
+        <updated>{updated}</updated>
+        {categorys}
+        <app:control>
+            <app:draft>{draft}</app:draft>
+            {custom_url_xml}
+        </app:control>
+    </entry>""".encode("UTF-8")
+
     r = req.post(BASE_URL + "/entry", auth=(HATENA_ID, API_KEY), data=xml)
     return r.text
 
