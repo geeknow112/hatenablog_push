@@ -12,7 +12,7 @@ BLOG_DOMAIN = "cashhack.hatenablog.com"
 API_KEY = "crxm68ghqj"
 BASE_URL = f"https://blog.hatena.ne.jp/{HATENA_ID}/{BLOG_DOMAIN}/atom"
 
-def hatena_entry(title, content, categorys=[], updated="", draft=True):
+def hatena_entry(title, content, categorys=[], custom_url=None, updated="", draft=True):
     """はてなブログへの投稿
     Attributes:
         HATENA_ID, API_KEY, BASE_URL (str)
@@ -107,7 +107,9 @@ if __name__ == "__main__":
     categorys = categorys.split(",")
     content = "\n".join(content)
     print(content)
+    custom_url = "custom_test"
+    print(custom_url)
 
-    r = hatena_entry(title, content, categorys)
+    r = hatena_entry(title, content, categorys, custom_url)
     print(r)
 
