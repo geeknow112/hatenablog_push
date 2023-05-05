@@ -32,7 +32,7 @@ def hatena_entry(title, content, categorys=[], custom_url=None, updated="", draf
     draft = "no" # 即公開
     category = lambda x: "\n".join([f"<category term='{e}' />" for e in x])
     categorys = category(categorys) if category else ""
-    
+
     # カスタムURLを設定
     if custom_url:
         custom_url_xml = f"""
