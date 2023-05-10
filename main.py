@@ -1,15 +1,17 @@
 from datetime import datetime
 import requests as req
+import json
 
-'''
-HATENA_ID = "yourenemy"
-BLOG_DOMAIN = "tradehack.hatenablog.com"
-API_KEY = "crxm68ghqj"
-BASE_URL = f"https://blog.hatena.ne.jp/{HATENA_ID}/{BLOG_DOMAIN}/atom"
-'''
-HATENA_ID = "yourenemy"
-BLOG_DOMAIN = "cashhack.hatenablog.com"
-API_KEY = "crxm68ghqj"
+api_key = open('/home/.hatena/api_key.json', 'r')
+json_load = json.load(api_key)
+
+# ID + APIキー
+## cashhack.hatenablog.com
+hatena = json_load['hatena']
+
+HATENA_ID = hatena['id']
+BLOG_DOMAIN = hatena['domain']
+API_KEY = hatena['api_key']
 BASE_URL = f"https://blog.hatena.ne.jp/{HATENA_ID}/{BLOG_DOMAIN}/atom"
 
 def hatena_entry(title, content, categorys=[], custom_url=None, updated="", draft=True):
