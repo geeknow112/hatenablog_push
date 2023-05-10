@@ -12,7 +12,7 @@ import os
 
 HATENA_ID = "yourenemy"
 BLOG_DOMAIN = "cashhack.hatenablog.com"
-API_KEY = os.environ.get('cashhack')
+API_KEY = os.environ['cashhack']
 print(API_KEY)%exit()
 BASE_URL = f"https://blog.hatena.ne.jp/{HATENA_ID}/{BLOG_DOMAIN}/atom"
 
