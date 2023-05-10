@@ -15,6 +15,10 @@ BLOG_DOMAIN = "cashhack.hatenablog.com"
 API_KEY = os.environ.get('cashhack')
 BASE_URL = f"https://blog.hatena.ne.jp/{HATENA_ID}/{BLOG_DOMAIN}/atom"
 
+# 追加されたファイルのパスを取得
+added_file = os.environ['GITHUB_WORKSPACE']
+print(added_file)%exit()
+
 def hatena_entry(title, content, categorys=[], custom_url=None, updated="", draft=True):
     """はてなブログへの投稿
     Attributes:
