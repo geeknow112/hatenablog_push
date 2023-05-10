@@ -7,6 +7,10 @@ on:
     branches:
       - master
   workflow_dispatch:
+    inputs:
+      cashhack:
+        description: 'API key for my Hatena Blog'
+        required: true
 
 jobs:
   numpy-test:
@@ -26,3 +30,5 @@ jobs:
         run: pip install -r requirements.txt
       - name: Run Python
         run: python main.py
+        env:
+          cashhack: ${{ github.event.inputs.cashhack }}
