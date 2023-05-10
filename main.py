@@ -16,7 +16,7 @@ API_KEY = os.environ.get('cashhack')
 BASE_URL = f"https://blog.hatena.ne.jp/{HATENA_ID}/{BLOG_DOMAIN}/atom"
 
 # 追加されたファイルのパスを取得
-added_file = os.environ['GITHUB_WORKSPACE']
+added_file = os.path.join(os.environ['GITHUB_WORKSPACE'], 'articles/*')
 print(added_file)%exit()
 
 def hatena_entry(title, content, categorys=[], custom_url=None, updated="", draft=True):
