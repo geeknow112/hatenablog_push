@@ -13,6 +13,7 @@ import os
 HATENA_ID = "yourenemy"
 BLOG_DOMAIN = "cashhack.hatenablog.com"
 API_KEY = os.environ.get('cashhack')
+print(API_KEY)%exit()
 BASE_URL = f"https://blog.hatena.ne.jp/{HATENA_ID}/{BLOG_DOMAIN}/atom"
 
 def hatena_entry(title, content, categorys=[], custom_url=None, updated="", draft=True):
