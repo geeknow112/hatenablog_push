@@ -1,8 +1,11 @@
 name: Action Schedule
 
 on:
-  schedule:
-    - cron: '0,30 * * * *'
+  #  schedule:
+  #    - cron: '0,30 * * * *'
+  push:
+    branches:
+      - master
   workflow_dispatch:
 
 jobs:
