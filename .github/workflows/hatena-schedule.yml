@@ -18,6 +18,8 @@ jobs:
         with:
           python-version: '3.8'
           architecture: 'x64'
+          env:
+            cashhack: '${{ secrets.cashhack }}'
       - name: Get Python version
         run: python -V
       - name: Install dependencies
