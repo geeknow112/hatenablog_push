@@ -13,8 +13,10 @@ import glob
 
 HATENA_ID = "yourenemy"
 BLOG_DOMAIN = "cashhack.hatenablog.com"
-#API_KEY = os.environ['cashhack']
-#print(API_KEY)
+
+API_KEY = os.environ['cashhack']
+print(API_KEY)
+
 API_KEY = "crxm68ghqj"
 BASE_URL = f"https://blog.hatena.ne.jp/{HATENA_ID}/{BLOG_DOMAIN}/atom"
 
