@@ -2,6 +2,7 @@ from datetime import datetime
 import requests as req
 import json
 import os
+import glob
 
 #api_key = open('/home/.hatena/api_key.json', 'r')
 #json_load = json.load(api_key)
@@ -12,8 +13,8 @@ import os
 
 HATENA_ID = "yourenemy"
 BLOG_DOMAIN = "cashhack.hatenablog.com"
-API_KEY = os.environ['cashhack']
-print(API_KEY)
+#API_KEY = os.environ['cashhack']
+#print(API_KEY)
 API_KEY = "crxm68ghqj"
 BASE_URL = f"https://blog.hatena.ne.jp/{HATENA_ID}/{BLOG_DOMAIN}/atom"
 
@@ -77,7 +78,9 @@ def set_datetime():
 
     dt = dt_now_jst_aware.strftime("%Y%m%d%H")
     # dt = "2022042523"
-    file = './articles/' + dt + '.md'
+    files = './articles/' + dt + '_*.md'
+    plist = glob.glob(files)
+    file = plist[0]
 
     isExists = os.path.exists(file) 
     print(isExists)
