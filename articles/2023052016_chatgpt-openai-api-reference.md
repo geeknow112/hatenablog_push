@@ -1,6 +1,6 @@
 chatGPTとOpenAI APIのリファレンス解説
 chatGPT,OpenAI API,人工知能,自然言語処理
-chatgpt-openai-api-reference.md
+chatgpt-openai-api-reference
 
 こんにちは。今回は、chatGPTについて初心者エンジニアに向けて、OpenAI APIを利用したリファレンス解説をお届けします。
 

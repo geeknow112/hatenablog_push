@@ -1,6 +1,6 @@
 ChatGPTとは？ビジネスに役立つ自然言語処理技術を解説する。
 ChatGPT,OPENAI,ビジネス
-chatgpt-for-business.md
+chatgpt-for-business
 
 こんにちは。今回は、ChatGPTという自然言語処理技術について初心者エンジニアに向けて解説します。
 

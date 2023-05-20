@@ -1,6 +1,6 @@
 ChatGTPがもたらす自然言語処理技術の進化について知ろう！
 ChatGTP,OPENAI,自然言語処理
-chatgpt-process-evolution.md
+chatgpt-process-evolution
 
 こんにちは。今回は、ChatGTPについて初心者エンジニアに向けて、自然言語処理技術の進化について解説します。
 
