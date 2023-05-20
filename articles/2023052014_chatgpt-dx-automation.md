@@ -1,6 +1,6 @@
 ChatGPTを使って、自社のサービスを自動化しよう！
 chatGPT,OpenAI,自動化
-chatgpt-dx-automation.md
+chatgpt-dx-automation
 
 こんにちは。今回は、ChatGPTについて初心者エンジニアに向けて、自社のサービスを自動化する方法についてお伝えします。
 

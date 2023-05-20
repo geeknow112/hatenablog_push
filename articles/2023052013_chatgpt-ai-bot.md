@@ -1,6 +1,6 @@
 ChatGPTによるAIチャットボットの設計と開発方法を解説！
 ChatGPT,OPENAI,チャットボット
-chatgpt-ai-bot.md
+chatgpt-ai-bot
 
 こんにちは。今回は、ChatGPTについて初心者エンジニアに向けて、AIチャットボットの設計と開発方法を解説します。
 

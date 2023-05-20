@@ -1,6 +1,6 @@
 【比較】chatgpt-3.5からchatgpt-4はどう進化したのか？気になる料金は？
 chatgpt,比較
-chatgpt-about-chatgpt-4.md
+chatgpt-about-chatgpt-4
 
 こんにちは。今回は、chatgptについて初心者エンジニアに向けて、chatgpt-3.5とchatgpt-4の比較について解説します。
 
