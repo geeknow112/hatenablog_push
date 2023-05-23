@@ -1,5 +1,6 @@
 【起業家向け】google bardとfirebaseを連携して実現するリアルタイムアプリケーションの開発
-"google,bard,起業
+google,bard,起業
+google-bard-firebase
 
 こんにちは。今回は、google bardについて初心者エンジニアに向けて、リアルタイムデータベースとプッシュ通知を使ったリアルタイムアプリケーションの開発方法をご紹介します。
 
