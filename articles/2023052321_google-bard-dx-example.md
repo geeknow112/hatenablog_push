@@ -1,5 +1,6 @@
 【起業家向け】企業のdxを加速するgoogle bardの活用事例とメリット
 google,bard,起業,dx
+google-bard-dx-example
 
 こんにちは。今回は、google bardについて初心者エンジニアに向けて、企業のdxを加速させるための活用事例とメリットについて紹介していきたいと思います。
 
